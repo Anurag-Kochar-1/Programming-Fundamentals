@@ -1,6 +1,6 @@
 // primeAndCompositeNumbers.js
 
-let num = 10
+let num = 2
 var isPrimeNumber = true
 
 for (let i = 2; i < num; i++) {
