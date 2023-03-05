@@ -15,5 +15,5 @@ const getSmallest = (arr) => {
     return arr.reduce((smallNum, num) => Math.max(smallNum, num))
 }
 
-
 console.log(getSmallest(arr))
+
