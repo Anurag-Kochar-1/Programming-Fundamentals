@@ -2,10 +2,6 @@
 
 const nums = [1, 2, 3, 4, 5]
 
-const sum = nums.reduce((acc, curr, i, arr) => {
-    return acc + curr
-}, 0)
-
 
 
 
@@ -39,4 +35,22 @@ const onlyEven = nums.myFilter((num) => {
     return num % 2 === 0
 })
 
-console.log(onlyEven)
+// console.log(onlyEven)
+
+
+
+// Polyfills for Reduce
+Array.prototype.myReduce = function (cb, initialValue) {
+    var accumulator = initialValue;
+
+    for (let i = 0; i < this.length; i++) {
+        accumulator = accumulator ? cb(accumulator, this[i], i, this) : this[i]
+    }
+    return accumulator
+}
+
+const sum = nums.myReduce((acc, curr, i, arr) => {
+    return acc + curr
+}, 0)
+
+console.log(sum)
