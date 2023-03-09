@@ -53,4 +53,50 @@ const sum = nums.myReduce((acc, curr, i, arr) => {
     return acc + curr
 }, 0)
 
-console.log(sum)
+// console.log(sum)
+
+
+
+// Q1
+// const newStudentsArr = names.map((student) => student.name.toUpperCase())
+
+// Q2 && Q3 
+// const minMarks = students.filter((student) => student.marks > 60 && student.rollNumber > 15)
+
+// Q4
+// const sumOfMarks = students.reduce((acc, curr) => acc + curr.marks, 0)
+
+// Q5
+// const minMarksStudentNames = students.map(student => student.name).filter(student => student.marks > 60)
+
+
+const students = [
+    { name: "A", marks: 80 }, // 40
+    { name: "B", marks: 69 }, // 50
+    { name: "C", marks: 35 }, // 70
+    { name: "D", marks: 55 }, // 70
+]
+
+// Q6 
+const final = students.map((student) => {
+    if (student.marks < 60) student.marks += 20
+    return student
+})
+.filter((student) => student.marks > 60)
+.reduce((acc, curr) => acc + curr.marks, 0)
+
+console.log(final)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
